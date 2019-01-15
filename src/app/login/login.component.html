@@ -1,0 +1,24 @@
+<div [class]="clase">
+  <h2>{{msj}}</h2>
+</div>
+<h2>{{email}}</h2>
+
+<ul>
+  <li *ngFor="let student of learners" >
+    {{student.age}} -- {{student.name}}
+  </li>
+</ul>
+
+
+<section class="container">
+  <div class="card">
+    <input #username (keydown)="onKeyDown(username.value)" [value]="userName" placeholder="Tu user" type="text">
+    <br>
+    <input [(ngModel)]="form.email" placeholder="Tu email" type="text">
+    <br>
+    <input [(ngModel)]="form.password" #pass placeholder="Tu password" type="password">
+    <input #checkbox (change)="togglePass(checkbox.checked, pass)" type="checkbox"> show password
+    <br>
+    <button (click)="testing()" >login</button>
+  </div>
+</section>
